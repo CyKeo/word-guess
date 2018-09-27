@@ -8,3 +8,7 @@ var guessedLetters = [];
 
 var wins = 0;
 
+var key = document.onkeyup; 
+
+console.log(key)
+
