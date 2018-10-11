@@ -1,95 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>HangMan Game</title>
+	<link rel="stylesheet" href="./assets/css/style.css">
 </head>
+
 <body>
-
+	
 	<!-- page title -->
-		<h1> Hangman Game </h1>
+	<h1 class="title"> Hangman Game </h1>
 
-	<!-- wins area -->
-		<h2>Wins: <span id="wins"></span></h2>
-
-		<h2>Tries: <span id="Tries"></span></h2>
-	<!-- display button pressed, will be changed to the letters guessed display -->
-		<h3>You pressed <span id="key"></span></h3>
-	
-	<!-- displays the current word to be guessed will be changed to display underscores for each letter that can be converted to letters on a correct guess -->
-		<h3> Word to guess <span id="word"></span></h3>
-	
-
-
-	<!-- place holder javascript area that will contain game functionality till its finished after game functionality will be moved to a separate file and linked in this document -->
-	<script>
-
-		// Variable area this area will hold the variables for the game
+	<!-- main content wrapper -->
+	<div class="wrapper">
 		
-		var randomWord = ["red" , "blue", "green", "brown", "yellow", "white", "black"];
-
-		var wins = 0;
-
-		var tries = 9;
-
-		var letterBox = [];
-
-		var userInput = document.getElementById("key");
-
-		var wordDisp = document.getElementById("word");
-
-		var winCount = document.getElementById("wins")
-
 		
-		// start or reset functionality area this will contain the reset function for the game
-		gameStart()
-		function gameStart(){
+		<!-- wins area -->
+		<div id="win">
+			<h2>Wins: <span id="wins"></span></h2>
+		</div>
 
-			letterBox = [];
+		<!-- displays the amount of tries the player has left -->
+		<div class="tries">
+			<h2>Tries: <span id="Tries"></span></h2>
+		</div>
 
-			winCount = wins;
+		<!-- displays the players losses -->
+		<div class="loss">
+			<h2>Losses: <span id="loss"></span></h2>
+		</div>
 
-			var answerWord = randomWord[Math.floor(Math.random() * randomWord.length)];
-			console.log(answerWord);
-
-			for (i = 0; i < answerWord.length; i++){
-			letterBox.push("_");
-			}
-			console.log(letterBox)
-			pageCreate()
-		}
-
-
-
-
-
-
-		// page setup area this will contain the page setup function, it will reset the values on the page after a win or loss including the letters guessed, trys, word to guess display.
-
-		function pageCreate(){
-			winCount.innerHTMl = wins;
-
-
-			for (i = 0; i < letterBox.length; i++){
-				wordDisp.innerText += ` ${letterBox[i]} `;
-			}
-		}
+		<div class="break">
+			<br>
+		</div>
+		
+		<!-- displays the letters the player has already guessed -->
+		<p>Letters guessed: <span id="lGuess"></span></p>
+		
+		<!-- displays the current word to be guessed will be changed to display underscores for each letter that can be converted to letters on a correct guess -->
+		<p> Word to guess <span id="word"></span></p>
+		
+	</div>
 
 
-
-
-		// This area will get the user input from the document
-
-		document.onkeyup = function(e){
-		if (e.which >= 65 && e.which <= 90)
-			console.log('event: ', event.key)
-		}
-
-
-		// This area contains the check function the function will check if the letter is in the word to guess and add it to the screen if it is and remove a guess if not
-	
-	</script>
+<!-- link to javascript for game -->
+	<script src="./assets/javascript/game.js"></script>
 </body>
+
 </html>
