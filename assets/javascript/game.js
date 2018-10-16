@@ -2,7 +2,7 @@
 	// Variable area this area will hold the variables for the game
 
 	// variable holding random letters
-	var randomWord = ["red", "blue", "green", "brown", "yellow", "white", "black"];
+	var randomWord = ["halloween", "trick", "treat", "boo", "zombie","ghost", "witch", "vampire", "monster", "frankenstein", "mummy", "pumpkin", "frightening"];
 
 	// variable that tracks the amount of wins the player has
 	var wins = 0;
